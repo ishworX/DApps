@@ -1,17 +1,13 @@
-const myObject =  {
-    property : 'value',
-    "obnoxious property" : function () {
+function Player(name, marker) {
+    this.name = name;
+    this.marker = marker;
+    this.sayName = function() {
+        console.log(this.name)
+    };
+}
 
-    }
-};
+const player = new Player("chintu", "X");
+const player2 = new Player ("chintu paji", "Y");
 
-// Dot notation
-myObject.property;
-
-// Broke notaion 
-myObject["obnoxious property"];
-
-
-function printName(player) {
-    console.log(player.name);
-} 
+player.sayName();
+player2.sayName();
