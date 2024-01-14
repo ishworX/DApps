@@ -1,0 +1,8 @@
+.navbar {
+    background-color: #30475e;
+}
+
+.navbar-nav .nav-item {
+    color: white;
+    position: relative;
+}
