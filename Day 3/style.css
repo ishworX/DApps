@@ -1,11 +1,26 @@
-.navbar {
-    background-color: #30475e;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' sans-serif; 
 }
 
-.navbar-nav .nav-item {
-    color: white;
-    position: relative;
+body {
+    min-height: 100vh;
+    background-color: aliceblue;
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    
+    padding: 20px 100px;
+    background: seagreen;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 }
-
