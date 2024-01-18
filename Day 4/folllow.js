@@ -18,7 +18,14 @@ const thisYear = 1965;
 const firstName = "Carlos";
 const lastName = "Stevenson";
 
-const greeting = "Hello! My name is " + firstName + " " + lastName + " and I am " + (thisYear - birthYear) + " years old.";
+const greeting =
+    "Hello! My name is " +
+    firstName +
+    " " +
+    lastName +
+    " and I am " +
+    (thisYear - birthYear) +
+    " years old.";
 
 console.log(greeting);
 
@@ -54,7 +61,6 @@ console.log(greeting);
 
 //===== Your code goes here =================
 
-
 /*
 
   ===== Step 3: =====
@@ -85,7 +91,7 @@ console.log(greeting);
 
 */
 
-// Test Step 2: 
+// Test Step 2:
 
 module.exports = {
     testGroup: "a",
@@ -93,9 +99,8 @@ module.exports = {
     birthYear,
     thisYear,
     firstName,
-    lastName
-}
-
+    lastName,
+};
 
 // Test Step 3: (Don't forget to comment out lines under Test Step 2)
 
