@@ -7,6 +7,15 @@
 // Tip: use the console to make sure this is returning the expected output before moving to the next step!
 function getComputerChoice() {
     // Assign Rock Paper and Scissor
+    let randomChoice = Math.floor(Math.random() * 3);
+    switch (randomChoice) {
+        case 0:
+            return 'ROCK';
+        case 1:
+            return 'PAPER';
+        case 2:
+            return 'SCISSORS';
+    }
 }
 
 
