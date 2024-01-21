@@ -13,13 +13,28 @@ function getComputerChoice() {
 // Write a function that plays a single round of Rock Paper Scissors. The function should take 
 // two parameters - the playerSelection and computerSelection - 
 // and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
-let playerscore = 0;
-let computerscore = 0;
-let gameSituation = ' ';
+let playerScore = 0;
+let computerScore = 0;
+let roundWinner = ' ';
 
 function playRound(playerSelection, computerSelection) {
 
-    
+    if (playerSelection == "ROCK" && computerSelection == "SCISSORS" ||
+        playerSelection == "SCISSOR" && computerSelection == "PAPER" || 
+        playerSelection == "PAPER" && computerSelection == "ROCK") 
+        {
+            playerScore++;
+            roundWinner = 'player';
+    }
+    if (computerSelection == "ROCK" && playerSelection == "SCISSORS" ||
+        computerSelection == "SCISSOR" && playerSelection == "PAPER" || 
+        computerSelection == "PAPER" && playerSelection == "ROCK") 
+        {   
+            computerScore++;
+            roundWinner = 'computer';
+    }
+
+    updateScoreMessage(roundWinner, playerSelection, computerSelection);
 }
 
 // Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, 
