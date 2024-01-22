@@ -59,6 +59,10 @@ function playRound(playerSelection, computerSelection) {
 // updateScoreMessage (winner, playerselection, computerselection) display texts
 
 // restartgame()
+// Checks condiion
+function restartgame () {
+
+}
 
 
 
