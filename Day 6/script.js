@@ -11,7 +11,6 @@ function getComputerChoice() {
     }
 }
 
-
 // Write a function that plays a single round of Rock Paper Scissors. The function should take 
 // two parameters - the playerSelection and computerSelection - 
 // and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
@@ -53,11 +52,6 @@ function playRound(playerSelection, computerSelection) {
 
 
 // Pseudo Code:
-// Playround will compare the chocies from player and computer
-// It will retiurn a choice, update scores for both compueter and player
-
-// getRandomChoice() it will get assigned to rock paper and scissor
-
 // updateChoice assigns emojis to computer
 
 // updateScore()  gives output
@@ -67,12 +61,6 @@ function playRound(playerSelection, computerSelection) {
 // restartgame()
 
 
-
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-
-
-console.log(playRound(playerSelection, computerSelection));
 
 
 
