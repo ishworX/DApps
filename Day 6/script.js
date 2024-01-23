@@ -62,24 +62,7 @@ function restartgame() {
 
 }
 
-function playGameRock() {
-    let computerSelection = choices[Math.floor(Math.random() * choices.length)];
 
-    if (computerSelection == "rock") {
-        commentary.textContent = "It's a tie!";
-    } else if (computerSelection == "paper") {
-        commentary.textContent = "Paper beats rock, you lose!";
-        computerScore++;
-    } else {
-        commentary.textContent = "Rock beats scissors, you win!";
-        playerScore++;
-    }
-    playerScoreboard.textContent = "You: " + playerScore;
-    computerScoreboard.textContent = "Computer: " + computerScore;
-    if (playerScore == 5 || computerScore == 5) {
-        stopGame();
-    }
-}
 
 
 
