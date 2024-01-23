@@ -21,18 +21,16 @@ let roundWinner = ' ';
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection == "ROCK" && computerSelection == "SCISSORS" ||
-        playerSelection == "SCISSOR" && computerSelection == "PAPER" || 
-        playerSelection == "PAPER" && computerSelection == "ROCK") 
-        {
-            playerScore++;
-            roundWinner = 'player';
+        playerSelection == "SCISSOR" && computerSelection == "PAPER" ||
+        playerSelection == "PAPER" && computerSelection == "ROCK") {
+        playerScore++;
+        roundWinner = 'player';
     }
     if (computerSelection == "ROCK" && playerSelection == "SCISSORS" ||
-        computerSelection == "SCISSOR" && playerSelection == "PAPER" || 
-        computerSelection == "PAPER" && playerSelection == "ROCK") 
-        {   
-            computerScore++;
-            roundWinner = 'computer';
+        computerSelection == "SCISSOR" && playerSelection == "PAPER" ||
+        computerSelection == "PAPER" && playerSelection == "ROCK") {
+        computerScore++;
+        roundWinner = 'computer';
     }
 
     updateScoreMessage(roundWinner, playerSelection, computerSelection);
@@ -60,8 +58,27 @@ function playRound(playerSelection, computerSelection) {
 
 // restartgame()
 // Checks condiion
-function restartgame () {
+function restartgame() {
 
+}
+
+function playGameRock() {
+    let computerSelection = choices[Math.floor(Math.random() * choices.length)];
+
+    if (computerSelection == "rock") {
+        commentary.textContent = "It's a tie!";
+    } else if (computerSelection == "paper") {
+        commentary.textContent = "Paper beats rock, you lose!";
+        computerScore++;
+    } else {
+        commentary.textContent = "Rock beats scissors, you win!";
+        playerScore++;
+    }
+    playerScoreboard.textContent = "You: " + playerScore;
+    computerScoreboard.textContent = "Computer: " + computerScore;
+    if (playerScore == 5 || computerScore == 5) {
+        stopGame();
+    }
 }
 
 
