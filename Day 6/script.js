@@ -53,6 +53,7 @@ function playRound(playerSelection, computerSelection) {
 // updateChoice assigns emojis to computer
 
 // updateScore()  gives output
+// New to change the whole logic
 
 // updateScoreMessage (winner, playerselection, computerselection) display texts
 
