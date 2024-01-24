@@ -64,6 +64,10 @@ function restartgame() {
 }
 
 
+function isGameOver(){
+    return playerScore === 5 || computerScore ===5
+
+}
 
 
 
