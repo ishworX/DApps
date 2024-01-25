@@ -1,5 +1,4 @@
 //For Interaction
-
 const scoreInfo = document.getElementById('scoreInfo')
 const scoreMessage = document.getElementById('scoreMessage')
 const playerScorePara = document.getElementById('playerScore')
@@ -23,8 +22,8 @@ restartBtn.addEventListener('click',restartGame)
 overlay.addEventListener('click',closeEndgameModal)
 
 
+// Assign Rock Paper and Scissor using Random function.
 function getComputerChoice() {
-    // Assign Rock Paper and Scissor
     let randomChoice = Math.floor(Math.random() * 3);
     switch (randomChoice) {
         case 0:
@@ -35,8 +34,6 @@ function getComputerChoice() {
             return 'SCISSORS';
     }
 }
-
-
 
 // Write a function that plays a single round of Rock Paper Scissors. The function should take 
 // two parameters - the playerSelection and computerSelection - 
@@ -65,6 +62,7 @@ function playRound(playerSelection, computerSelection) {
     updateScoreMessage(roundWinner, playerSelection, computerSelection);
 }
 
+// Check if playerScore or computerscore went to 5.
 function isGameOver() {
     return playerScore === 5 || computerScore === 5
 }
@@ -75,7 +73,6 @@ function isGameOver() {
 // we will updateChoices(playerSelection, computerSelection);
 // UpdateScore()
 // Check if the game is over if yes openEndgameModle and send setFinalMessage()
-
 function handleClick(playerSelection) {
 
     if (isGameOver()) {
@@ -111,6 +108,7 @@ function handleClick(playerSelection) {
 
 // Pseudo Code:
 // updateChoice assigns emojis to computer
+// Use the switch command for both player and computer
 function updateChoices(playerSelection, computerSelection) {
     switch (playerSelection) {
         case 'ROCK':
@@ -152,7 +150,7 @@ function updateScore() {
 }
 
 // updateScoreMessage (winner, playerselection, computerselection) display texts
-
+// user winner to check if it beats, beaten or ties
 function updateScoreMessage(winner, playerSelection, computerSelection) {
     if (winner === 'player') {
         scoreMessage.textContent = `${capitalizeFirstLetter(
@@ -173,20 +171,24 @@ function updateScoreMessage(winner, playerSelection, computerSelection) {
 }
 
 // Endgame model
+// Capatilize the first leter
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
 }
 
+// adds active on the endgameModel
 function openEndgameModal() {
     endgameModal.classList.add('active')
     overlay.classList.add('active')
 }
 
+// removes active on the endgameModel
 function closeEndgameModal() {
     endgameModal.classList.remove('active')
     overlay.classList.remove('active')
 }
 
+// Checks if playerscore id greater than computerscore if its than print you won
 function setFinalMessage() {
     return playerScore > computerScore
         ? (endgameMsg.textContent = 'You won!')
