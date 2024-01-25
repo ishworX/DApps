@@ -11,6 +11,8 @@ function getComputerChoice() {
     }
 }
 
+
+
 // Write a function that plays a single round of Rock Paper Scissors. The function should take 
 // two parameters - the playerSelection and computerSelection - 
 // and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
@@ -19,7 +21,9 @@ let computerScore = 0;
 let roundWinner = ' ';
 
 function playRound(playerSelection, computerSelection) {
-
+    if (playerSelection === computerSelection) {
+        roundWinner = 'tie'
+    }
     if (playerSelection == "ROCK" && computerSelection == "SCISSORS" ||
         playerSelection == "SCISSOR" && computerSelection == "PAPER" ||
         playerSelection == "PAPER" && computerSelection == "ROCK") {
@@ -36,9 +40,40 @@ function playRound(playerSelection, computerSelection) {
     updateScoreMessage(roundWinner, playerSelection, computerSelection);
 }
 
+function isGameOver() {
+    return playerScore === 5 || computerScore === 5
+}
+
+// This function takes a playerselection abd checks if the game is over
+// If the game is over it will run the openEndGameModal() 
+// We will assign computerSelection to a randomChoice();
+// we will updateChoices(playerSelection, computerSelection);
+// UpdateScore()
+// Check if the game is over if yes openEndgameModle and send setFinalMessage()
+
+function handleClick(playerSelection) {
+
+    if (isGameOver()) {
+        openEndgameModal()
+        return;
+    }
+
+    const computerSelection = getRandomChoice()
+    playRound(playerSelection, computerSelection)
+    updateChoices(playerSelection, computerSelection)
+    updateScore()
+
+    if (isGameOver()) {
+        openEndgameModal()
+        setFinalMessage()
+    }
+}
+
+
 // Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, 
 // RocK or any other variation).
 // Account for TIES by re-playing the round.
+
 
 // Write a NEW function called game(). Use the previous function inside of this one to play a best-of-five game 
 // that keeps score and reports a winner or loser at the end.
@@ -64,10 +99,6 @@ function restartgame() {
 }
 
 
-function isGameOver(){
-    return playerScore === 5 || computerScore ===5
-
-}
 
 
 
