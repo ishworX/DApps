@@ -91,6 +91,30 @@ function handleClick(playerSelection) {
 // New to change the whole logic
 
 // updateScoreMessage (winner, playerselection, computerselection) display texts
+function updateChoices(playerSelection, computerSelection) {
+    switch (playerSelection) {
+        case 'ROCK':
+            playerSign.textContent = '✊'
+            break
+        case 'PAPER':
+            playerSign.textContent = '✋'
+            break
+        case 'SCISSORS':
+            playerSign.textContent = '✌'
+            break
+    }
+    switch (computerSelection) {
+        case 'ROCK':
+            computerSign.textContent = '✊'
+            break
+        case 'PAPER':
+            computerSign.textContent = '✋'
+            break
+        case 'SCISSORS':
+            computerSign.textContent = '✌'
+            break
+    }
+}
 
 // restartgame()
 // Checks condiion
