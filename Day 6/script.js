@@ -148,7 +148,25 @@ function updateScoreMessage(winner, playerSelection, computerSelection) {
 }
 
 // Endgame model
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+}
 
+function openEndgameModal() {
+    endgameModal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeEndgameModal() {
+    endgameModal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
+function setFinalMessage() {
+    return playerScore > computerScore
+        ? (endgameMsg.textContent = 'You won!')
+        : (endgameMsg.textContent = 'You lost...')
+}
 
 // restartgame()
 // Checks condiion
