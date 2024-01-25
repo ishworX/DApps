@@ -170,8 +170,17 @@ function setFinalMessage() {
 
 // restartgame()
 // Checks condiion
-function restartgame() {
-
+function restartGame() {
+    playerScore = 0
+    computerScore = 0
+    scoreInfo.textContent = 'Choose your weapon'
+    scoreMessage.textContent = 'First to score 5 points wins the game'
+    playerScorePara.textContent = 'Player: 0'
+    computerScorePara.textContent = 'Computer: 0'
+    playerSign.textContent = '❔'
+    computerSign.textContent = '❔'
+    endgameModal.classList.remove('active')
+    overlay.classList.remove('active')
 }
 
 
