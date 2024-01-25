@@ -89,6 +89,18 @@ function handleClick(playerSelection) {
 
 // updateScore()  gives output
 // New to change the whole logic
+function updateScore() {
+    if (roundWinner === 'tie') {
+        scoreInfo.textContent = "It's a tie!"
+    } else if (roundWinner === 'player') {
+        scoreInfo.textContent = 'You won!'
+    } else if (roundWinner === 'computer') {
+        scoreInfo.textContent = 'You lost!'
+    }
+
+    playerScorePara.textContent = `Player: ${playerScore}`
+    computerScorePara.textContent = `Computer: ${computerScore}`
+}
 
 // updateScoreMessage (winner, playerselection, computerselection) display texts
 function updateChoices(playerSelection, computerSelection) {
@@ -100,7 +112,7 @@ function updateChoices(playerSelection, computerSelection) {
             playerSign.textContent = '✋'
             break
         case 'SCISSORS':
-            playerSign.textContent = '✌'
+            playerSign.textContent = '✌️'
             break
     }
     switch (computerSelection) {
