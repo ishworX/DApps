@@ -74,22 +74,15 @@ function isGameOver() {
 // UpdateScore()
 // Check if the game is over if yes openEndgameModle and send setFinalMessage()
 function handleClick(playerSelection) {
-
     if (isGameOver()) {
-        openEndgameModal()
+        openEndgameModal();
         return;
     }
 
-    const computerSelection = getRandomChoice()
-    playRound(playerSelection, computerSelection)
-    updateChoices(playerSelection, computerSelection)
-    updateScore()
-
-    if (isGameOver()) {
-        openEndgameModal()
-        setFinalMessage()
-    }
+    const computerSelection = getComputerChoice();
+    
 }
+
 
 
 // Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, 
