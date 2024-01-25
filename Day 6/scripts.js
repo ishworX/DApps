@@ -1,5 +1,5 @@
 // Interations
-
+const scoreMessage = document.getElementById('scoreMessage');
 
 
 // Connecting interactions with Funtions.
@@ -22,3 +22,43 @@ function getComputerChoice() {
     };
 };
 
+// This function plays a single round of Rock Paper Scissors.
+// It takes two parameter - the playerSelection and computerSelection 
+// Return a string that declares the winner of the round 
+// For eg: "You Lose! Paper beats Rock"
+let playerScore = 0;
+let computerScore = 0;
+let roundWinner = ' ';
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection == computerSelection) {
+        roundWinner = 'tie';
+    }
+    if (playerSelection == "ROCK" && computerSelection == "SCISSORS" ||
+        playerSelection == "SCISSOR" && computerSelection == "PAPER" ||
+        playerSelection == "PAPER" && computerSelection == "ROCK") {
+        playerScore++;
+        roundWinner = 'player';
+    }
+    if (computerSelection == "ROCK" && playerSelection == "SCISSORS" ||
+        computerSelection == "SCISSOR" && playerSelection == "PAPER" ||
+        computerSelection == "PAPER" && playerSelection == "ROCK") {
+        computerScore++;
+        roundWinner = 'computer';
+    }
+    updateScoreMessage(roundWinner, playerSelection, computerSelection);
+}
+
+function updateScoreMessage(winner, playerSelection, computerSelection) {
+    if (winner == 'player') {
+        scoreMessage.textContent = `${playerSelection} beats ${computerSelection}`;
+        return;
+    }
+
+    if (winner == 'computer') {
+        scoreMessage.textContent = `${computerSelection} beats ${playerSelection}`;
+        return;
+    }
+
+    scoreMessage.textContent = `${playerSelection} ties with ${computerSelection}`;
+}
