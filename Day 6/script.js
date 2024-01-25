@@ -86,23 +86,6 @@ function handleClick(playerSelection) {
 
 // Pseudo Code:
 // updateChoice assigns emojis to computer
-
-// updateScore()  gives output
-// New to change the whole logic
-function updateScore() {
-    if (roundWinner === 'tie') {
-        scoreInfo.textContent = "It's a tie!"
-    } else if (roundWinner === 'player') {
-        scoreInfo.textContent = 'You won!'
-    } else if (roundWinner === 'computer') {
-        scoreInfo.textContent = 'You lost!'
-    }
-
-    playerScorePara.textContent = `Player: ${playerScore}`
-    computerScorePara.textContent = `Computer: ${computerScore}`
-}
-
-// updateScoreMessage (winner, playerselection, computerselection) display texts
 function updateChoices(playerSelection, computerSelection) {
     switch (playerSelection) {
         case 'ROCK':
@@ -127,6 +110,45 @@ function updateChoices(playerSelection, computerSelection) {
             break
     }
 }
+
+// updateScore()  gives output
+// New to change the whole logic
+function updateScore() {
+    if (roundWinner === 'tie') {
+        scoreInfo.textContent = "It's a tie!"
+    } else if (roundWinner === 'player') {
+        scoreInfo.textContent = 'You won!'
+    } else if (roundWinner === 'computer') {
+        scoreInfo.textContent = 'You lost!'
+    }
+
+    playerScorePara.textContent = `Player: ${playerScore}`
+    computerScorePara.textContent = `Computer: ${computerScore}`
+}
+
+// updateScoreMessage (winner, playerselection, computerselection) display texts
+
+function updateScoreMessage(winner, playerSelection, computerSelection) {
+    if (winner === 'player') {
+        scoreMessage.textContent = `${capitalizeFirstLetter(
+            playerSelection
+        )} beats ${computerSelection.toLowerCase()}`
+        return
+    }
+    if (winner === 'computer') {
+        scoreMessage.textContent = `${capitalizeFirstLetter(
+            playerSelection
+        )} is beaten by ${computerSelection.toLowerCase()}`
+        return
+    }
+
+    scoreMessage.textContent = `${capitalizeFirstLetter(
+        playerSelection
+    )} ties with ${computerSelection.toLowerCase()}`
+}
+
+// Endgame model
+
 
 // restartgame()
 // Checks condiion
