@@ -1,4 +1,5 @@
 // Interations
+const scoreInfo = document.getElementById('scoreInfo');
 const scoreMessage = document.getElementById('scoreMessage');
 
 
@@ -54,11 +55,24 @@ function updateScoreMessage(winner, playerSelection, computerSelection) {
         scoreMessage.textContent = `${playerSelection} beats ${computerSelection}`;
         return;
     }
-
+    
     if (winner == 'computer') {
         scoreMessage.textContent = `${computerSelection} beats ${playerSelection}`;
         return;
     }
-
+    
     scoreMessage.textContent = `${playerSelection} ties with ${computerSelection}`;
+}
+
+function updateScore()  {
+    if (roundWinner === 'tie') {
+        scoreInfo.textContent = "It's a tie!";
+    } else if (roundWinner === 'player') {
+        scoreInfo.textContent = "You won!";
+    } else if (roundWinner === 'computer') {
+        scoreInfo.textContent = "You lost!";
+    }
+
+    playerScorePara.textContent = `Player: ${playerScore}`;
+    computerScorePara.textContent = `Computer: ${computerScore}`;
 }
