@@ -1,1 +1,1 @@
-x
+let input = prompt(`Please enter your choice: Rock, Paper Or Scissor: `)
