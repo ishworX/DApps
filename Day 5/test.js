@@ -1,5 +1,7 @@
 const prompt = require("prompt-sync")();
 
-let input = prompt(`Please enter your choice: Rock, Paper Or Scissor: `);
+let inp = prompt(`Please enter your choice: Rock, Paper Or Scissor: `);
+let choice = inp.toLowerCase();
 
-console.log(`Your inpur is ${input}.`);
+console.log(`Your input is ${choice}.`);
+
