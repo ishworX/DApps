@@ -7,4 +7,10 @@ console.log(`Your input is ${choice}.`);
 
 let computerScore = 0;
 let humanScore = 0;
+let result = '';
+
+for (let i = 0; i < 5; i++) {
+    const element = array[i];
+    
+}
 
