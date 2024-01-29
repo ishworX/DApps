@@ -5,3 +5,6 @@ let choice = inp.toLowerCase();
 
 console.log(`Your input is ${choice}.`);
 
+let computerScore = 0;
+let humanScore = 0;
+
