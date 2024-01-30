@@ -9,8 +9,7 @@ let computerScore = 0;
 let humanScore = 0;
 let result = '';
 
-for (let i = 0; i < 5; i++) {
-    const element = array[i];
-    
+for (let i = 1; i <= 5; i++) {
+    console.log(`Round: ` + i);
 }
 
