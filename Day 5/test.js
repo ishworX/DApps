@@ -10,10 +10,12 @@ let humanScore = 0;
 let result = '';
 
 
-const compChoice = ["Rock", "Paper", "Scissor"];
+function getComputerChoice() {
+    const compChoice = ["Rock", "Paper", "Scissor"];
 
-const random = Math.floor(Math.random() * compChoice.length);
-console.log(random, compChoice[random]);
+    const random = Math.floor(Math.random() * compChoice.length);
+    return compChoice[random];
+}
 
 function playRound(playerSelection, computerSelection) {
     for (let i = 1; i <= 5; i++) {
