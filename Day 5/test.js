@@ -1,11 +1,5 @@
 const prompt = require("prompt-sync")();
 
-
-
-let computerScore = 0;
-let humanScore = 0;
-let result = '';
-
 function getUserChoice() {
     let inp = prompt(`Please enter your choice: Rock, Paper Or Scissor: `);
     let choice = inp.toLowerCase();
@@ -22,9 +16,25 @@ function getComputerChoice() {
 console.log(getUserChoice());
 console.log(getComputerChoice());
 
+
+
+let computerScore = 0;
+let humanScore = 0;
+let result = '';
+
 function playRound(playerSelection, computerSelection) {
+
     for (let i = 1; i <= 5; i++) {
         console.log(`Round: ` + i);
+        if (computerSelection === playerSelection ) {
+            result = 'tie';
+            i++;
+        }
     }
+    return result;
 }
 
+let user = getUserChoice();
+let computer = getComputerChoice();
+
+let game = playRound(user, computer);
