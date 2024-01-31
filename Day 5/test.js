@@ -17,6 +17,8 @@ function getComputerChoice() {
     return compChoice[random];
 }
 
+console.log(getComputerChoice());
+
 function playRound(playerSelection, computerSelection) {
     for (let i = 1; i <= 5; i++) {
         console.log(`Round: ` + i);
