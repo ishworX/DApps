@@ -13,10 +13,8 @@ function getComputerChoice() {
     const random = Math.floor(Math.random() * compChoice.length);
     return compChoice[random].toLocaleLowerCase();
 }
-console.log(getUserChoice());
+// console.log(getUserChoice());
 console.log(getComputerChoice());
-
-
 
 let computerScore = 0;
 let humanScore = 0;
@@ -38,3 +36,4 @@ let user = getUserChoice();
 let computer = getComputerChoice();
 
 let game = playRound(user, computer);
+console.log(game);
