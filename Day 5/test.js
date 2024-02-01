@@ -23,15 +23,15 @@ function playRound(playerSelection, computerSelection) {
         roundWinner = 'tie';
         return roundWinner;
     }
-    if (playerSelection === "ROCK" && computerSelection === "SCISSORS" ||
-        playerSelection === "SCISSOR" && computerSelection === "PAPER" ||
-        playerSelection === "PAPER" && computerSelection === "ROCK") {
+    if (playerSelection === "rock" && computerSelection === "scissor" ||
+        playerSelection === "scissor" && computerSelection === "paper" ||
+        playerSelection === "paper" && computerSelection === "rock") {
         roundWinner = 'player';
         return roundWinner;
     }
-    if (computerSelection === "ROCK" && playerSelection === "SCISSORS" ||
-        computerSelection === "SCISSOR" && playerSelection === "PAPER" ||
-        computerSelection === "PAPER" && playerSelection === "ROCK") {
+    if (computerSelection === "rock" && playerSelection === "scissor" ||
+        computerSelection === "scissor" && playerSelection === "paper" ||
+        computerSelection === "paper" && playerSelection === "rock") {
         roundWinner = 'computer';
         return roundWinner;
     }
