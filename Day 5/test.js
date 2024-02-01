@@ -17,9 +17,25 @@ function getComputerChoice() {
 console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) {
-    
-}
+    let roundWinner = '';
 
+    if (playerSelection == computerSelection) {
+        roundWinner = 'tie';
+        return roundWinner;
+    }
+    if (playerSelection == "ROCK" && computerSelection == "SCISSORS" ||
+        playerSelection == "SCISSOR" && computerSelection == "PAPER" ||
+        playerSelection == "PAPER" && computerSelection == "ROCK") {
+        roundWinner = 'player';
+        return roundWinner;
+    }
+    if (computerSelection == "ROCK" && playerSelection == "SCISSORS" ||
+        computerSelection == "SCISSOR" && playerSelection == "PAPER" ||
+        computerSelection == "PAPER" && playerSelection == "ROCK") {
+        roundWinner = 'computer';
+        return roundWinner;
+    }
+}
 
 let computerScore = 0;
 let humanScore = 0;
