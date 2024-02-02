@@ -17,24 +17,10 @@ function getComputerChoice() {
 console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) {
-    let roundWinner = '';
+    let user = getUserChoice();
+    let computer = getComputerChoice();
 
-    if (playerSelection === computerSelection) {
-        roundWinner = 'tie';
-        return roundWinner;
-    }
-    if (playerSelection === "rock" && computerSelection === "scissor" ||
-        playerSelection === "scissor" && computerSelection === "paper" ||
-        playerSelection === "paper" && computerSelection === "rock") {
-        roundWinner = 'player';
-        return roundWinner;
-    }
-    if (computerSelection === "rock" && playerSelection === "scissor" ||
-        computerSelection === "scissor" && playerSelection === "paper" ||
-        computerSelection === "paper" && playerSelection === "rock") {
-        roundWinner = 'computer';
-        return roundWinner;
-    }
+    
 }
 
 let computerScore = 0;
@@ -42,8 +28,7 @@ let humanScore = 0;
 let result = '';
 
 
-let user = getUserChoice();
-let computer = getComputerChoice();
+
 
 let game = playRound(user, computer);
 console.log(game);
