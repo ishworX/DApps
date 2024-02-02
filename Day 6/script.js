@@ -9,6 +9,9 @@ function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissor'];
 
     const randomChoice = Math.floor(Math.random() * choices.length);
-    return months[randomChoice].toLowerCase();
+    return choices[randomChoice];
 }
 
+let user = getUserChoice();
+let comp = getComputerChoice();
+console.log(user + ' and ' + comp);
