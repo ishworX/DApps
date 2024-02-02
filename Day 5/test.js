@@ -2,7 +2,7 @@ const prompt = require("prompt-sync")();
 
 function getUserChoice() {
     let inp = prompt(`Please enter your choice: Rock, Paper Or Scissor: `);
-    let choice = inp;
+    let choice = inp.toLowerCase();
     
     return choice;
 }
@@ -11,14 +11,14 @@ function getComputerChoice() {
     const compChoice = ["Rock", "Paper", "Scissor"];
 
     const random = Math.floor(Math.random() * compChoice.length);
-    return compChoice[random];
+    return compChoice[random].toLocaleLowerCase();
 }
 // console.log(getUserChoice());
 console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) {
-    let user = getUserChoice().toLowerCase();
-    let computer = getComputerChoice().toLocaleLowerCase();
+    let player = getUserChoice();
+    let computer = getComputerChoice();
 
     if (player === 'rock' && computer === 'scissors') {
         return "You Win! Rock beats Scissors"
@@ -40,12 +40,13 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
+
 let computerScore = 0;
 let humanScore = 0;
 let result = '';
 
 
 
-
+let user, computer;
 let game = playRound(user, computer);
-// console.log(game);
+console.log(game);
