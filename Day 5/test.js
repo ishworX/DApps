@@ -17,8 +17,8 @@ function getComputerChoice() {
 console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) {
-    let player = getUserChoice();
-    let computer = getComputerChoice();
+    let player = playerSelection;
+    let computer = computerSelection;
 
     if (player === 'rock' && computer === 'scissors') {
         return "You Win! Rock beats Scissors"
@@ -39,14 +39,29 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function playGame() {
+    let computerScore = 0;
+    let playerScore = 0;
 
+    for (let i = 0; i < 5; i++) {
 
-let computerScore = 0;
-let humanScore = 0;
-let result = '';
+        let result = playRound(getUserChoice(), getComputerChoice());
 
+        if (result[4] === "W") {
+            console.log(result);
+            playerScore++;
+            console.log("You: " + playerScore + "  Computer: " + computerScore);
+        } else if (result[4] === "L") {
+            console.log(result);
+            computerScore++;
+            console.log("You: " + playerScore + "  Computer: " + computerScore);
+        } else if (result[0] === "T") {
+            console.log(result);
+            console.log("You: " + playerScore + "  Computer: " + computerScore);
+        } else {
+            console.log(result);
+            break;
+        }
+    }
+}
 
-
-let user, computer;
-let game = playRound(user, computer);
-console.log(game);
