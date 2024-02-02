@@ -39,8 +39,7 @@ function playGame() {
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
-
+    for (let i = 1; i <= 5; i++) {
         let result = playRound(getUserChoice(), getComputerChoice());
 
         if (result[4] === 'W') {
@@ -63,6 +62,16 @@ function playGame() {
         }
     }
 
-    
+    if (playerScore > computerScore) {
+        console.log(" \nCongratulations you won the game.")
+        console.log(`Your Score:- ${playerScore} Computer Score:- ${computerScore}`); 
+    } else if (playerScore === computerScore) {
+        console.log(" \nIt's a TIE.")
+        console.log(`Your Score:- ${playerScore} Computer Score:- ${computerScore}`); 
+    } else {
+        console.log(" \nYou lost the game! Better luck next time.")
+        console.log(`Your Score:- ${playerScore} Computer Score:- ${computerScore}`); 
+    }
 }
 
+playGame();
