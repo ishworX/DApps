@@ -63,5 +63,17 @@ function playGame() {
             break;
         }
     }
+
+    if (playerScore > computerScore) {
+        console.log("");
+        console.log("You Win!!!");
+        console.log("You: " + scorePlayer + "  Computer: " + scoreComputer);
+    } else if (playerScore === computerScore) {
+        console.log("It's a Tie");
+    } else {
+        console.log("");
+        console.log("You Win!!!");
+        console.log("You: " + scorePlayer + "  Computer: " + scoreComputer);
+    }
 }
 
