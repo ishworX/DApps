@@ -12,10 +12,7 @@ function getComputerChoice() {
     return choices[randomChoice];
 }
 
-let user = getUserChoice();
-let comp = getComputerChoice();
-console.log(user + ' and ' + comp);
-
+// Function : Checks the win or loss condition for both player and computer.
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
@@ -36,3 +33,36 @@ function playRound(playerSelection, computerSelection) {
         return "Please enter a valid input!";
     }
 } 
+
+// The main function to play the game!
+function playGame() {
+    let playerScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+
+        let result = playRound(getUserChoice(), getComputerChoice());
+
+        if (result[4] === 'W') {
+            console.log(result);
+            playerScore++;
+            console.log("Round: " + i);
+            console.log(`Your Score:- ${playerScore} Computer Score:- ${computerScore}`);
+        } else if (result[4] === 'L') {
+            console.log(result);
+            computerScore++;
+            console.log("Round: " + i);
+            console.log(`Your Score:- ${playerScore} Computer Score:- ${computerScore}`); 
+        } else if (result[0] === 'T') {
+            console.log(result);
+            console.log("Round: " + i);
+            console.log(`Your Score:- ${playerScore} Computer Score:- ${computerScore}`); 
+        } else {
+            console.log(result);
+            break;
+        }
+    }
+
+    
+}
+
