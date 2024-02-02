@@ -20,8 +20,25 @@ function playRound(playerSelection, computerSelection) {
     let user = getUserChoice();
     let computer = getComputerChoice();
 
-    
+    if (player === 'rock' && computer === 'scissors') {
+        return "You Win! Rock beats Scissors"
+    } else if (player === 'rock' && computer === 'paper') {
+        return "You Lose! Paper beats Rock"
+    } else if (player === 'paper' && computer === 'rock') {
+        return "You Win! Paper beats Rock"
+    } else if (player === 'paper' && computer === 'scissors') {
+        return "You Lose! Scissors beat Paper"
+    } else if (player === 'scissors' && computer === 'paper') {
+        return "You Win! Scissors beat Paper"
+    } else if (player === 'scissors' && computer === 'rock') {
+        return "You Lose! Rock beats Scissors"
+    } else if (player === computer) {
+        return "TIE play again"
+    } else {
+        return "Enter a valid value"
+    }
 }
+
 
 let computerScore = 0;
 let humanScore = 0;
