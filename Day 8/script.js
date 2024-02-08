@@ -6,3 +6,6 @@ content.classList.add('content');
 content.textContent = 'This is the glorious text-content!';
 
 container.appendChild(content);
+
+const btn = document.querySelector('#btn');
+btn.onclick = () => alert("Hello World");
