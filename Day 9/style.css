@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+body {
+    margin: 0px;
+    padding: 24px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(179, 131, 224);
+    gap: 24px;
+    font-family: serif;
+}
