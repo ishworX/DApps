@@ -10,3 +10,11 @@ gridSize.addEventListener("click", () => {
         createGrid(+size);
     }
 })
+
+pencil.addEventListener("click", () => {
+    stylus = "pencil";
+    pencil.className = "selected";
+    rainbow.className = "notselected";
+    eraser.className = "notselected";
+})
+
