@@ -18,3 +18,9 @@ pencil.addEventListener("click", () => {
     eraser.className = "notselected";
 })
 
+rainbow.addEventListener("click", () => {
+    stylus = "rainbow";
+    pencil.className = "notselected";
+    rainbow.className = "selected";
+    eraser.className = "notselected";
+})
