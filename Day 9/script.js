@@ -31,3 +31,30 @@ eraser.addEventListener("click", () => {
     rainbow.className = "notselected";
     eraser.className = "selected";
 })
+
+function createGrid(gridSide) {
+    while (gridOfSquares.firstChild) {
+        gridOfSquares.removeChild(gridOfSquares.lastChild);
+    }
+    for (let i = 0; i < gridSide; i ++) {
+        let outerDiv = document.createElement("div");
+        outerDiv.style.display = "flex";
+        outerDiv.style.margin = "0px";
+        outerDiv.style.padding = "0px";
+        outerDiv.style.justifyContent = "space-between";
+        outerDiv.style.alignItems = "stretch";
+        outerDiv.style.flex = "auto";
+        outerDiv.style.gap = "0px";
+        for (let j = 0; j < gridSide; j++) {
+            let innerDiv = document.createElement("div");
+            innerDiv.style.flex = "auto";
+            innerDiv.style.margin = "0px";
+            innerDiv.style.backgroundColor = "rgb(255, 255, 255)";
+            innerDiv.addEventListener("mouseenter", () => {
+                innerDiv.style.backgroundColor = changeColor(innerDiv.style.backgroundColor);
+            })
+            outerDiv.appendChild(innerDiv);
+        }
+        gridOfSquares.appendChild(outerDiv);
+    }
+}
