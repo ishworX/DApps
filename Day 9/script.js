@@ -59,16 +59,6 @@ function createGrid(gridSide) {
     }
 }
 
-function changeColor(currentColor) {
-    if (stylus === "eraser") {
-        return "rgb(255, 255, 255)";
-    } else if (stylus === "rainbow") {
-        return `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
-    } else {
-        let rgb = currentColor.substring(4, currentColor.length-1).split(", ");
-        return `rgb(${Math.max(0, +rgb[0] - 25)}, ${Math.max(0, +rgb[1] - 25)}, ${Math.max(0, +rgb[2] - 25)})`;
-    }
-}
 
 
 createGrid(side);
